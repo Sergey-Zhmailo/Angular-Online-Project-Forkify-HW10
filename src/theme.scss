@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$forkify-primary: mat-palette($mat-orange);
+$forkify-accent: mat-palette($mat-red, A200, A100, A400);
+$forkify-warn: mat-palette($mat-amber);
+
+$forkify: mat-light-theme($forkify-primary, $forkify-accent, $forkify-warn);
+
+@include angular-material-theme($forkify);
