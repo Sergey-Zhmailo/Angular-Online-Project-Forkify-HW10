@@ -12,11 +12,12 @@
 }
 .custom-navbar .nav .link {
   color: rgb(176, 190, 197);
+  text-decoration: none;
 }
 .custom-navbar .nav .link + .link {
   margin-left: 15px;
 }
 .custom-navbar .nav .link:hover,
-.custom-navbar.nav .link.active {
+.custom-navbar .nav .link.active {
   color: #e5e5e5;
 }

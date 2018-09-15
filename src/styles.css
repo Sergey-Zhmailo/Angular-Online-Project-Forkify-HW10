@@ -20,6 +20,12 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.search-block {
+  position: relative;
+}
+.search-block-left {
+  position: initial;
+}
 /* ----- CUSTOM STYLES ----- */
 .align-right {
   text-align: right;
@@ -35,4 +41,9 @@ body {
 }
 .float-right {
   float: right;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
 }

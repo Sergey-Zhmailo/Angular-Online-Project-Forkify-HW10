@@ -1,7 +1,18 @@
 <div class="search-wrapper">
   <mat-form-field class="w-100" color="accent">
-    <input type="text" matInput placeholder="Search">
+    <input type="text" matInput placeholder="Search" [formControl]="searchControl" [matAutocomplete]="history" value="">
+    <mat-autocomplete #history="matAutocomplete">
+      <mat-option *ngFor="let item of filteredOptions | async" [value]="item.name">
+        {{ item.name }}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
-  <button mat-raised-button color="accent">Search</button>
-  <mat-slide-toggle color="accent" class="ml-5 save-toggle">Save search history</mat-slide-toggle>
+  <button mat-raised-button color="accent" (click)="onSearch()" [disabled]="!searchControl.value">Search</button>
+  <mat-slide-toggle color="accent" class="ml-5 save-toggle" [(ngModel)]="saveSearch">Save search history</mat-slide-toggle>
 </div>
+<ngx-spinner size = "large"
+             bdColor="#424242"
+             color = "#b0bec5"
+             type = "ball-scale-ripple-multiple"
+             class="spinner"
+><p style="font-size: 20px; color: white;">Searching...</p></ngx-spinner>

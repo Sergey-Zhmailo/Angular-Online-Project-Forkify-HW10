@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-4 mb-3" *ngFor="let item of searchResult">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title class="text-uppercase">{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>{{ item.publisher }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ item.image_url }}" alt="{{ item.title }}">
+      <mat-card-actions class="clearfix">
+        <button mat-button class="float-left" mat-stroked-button color="accent">Details</button>
+        <button mat-button class="float-right" mat-stroked-button color="accent" (click)="addToFavorites(item)">Add to favorites</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

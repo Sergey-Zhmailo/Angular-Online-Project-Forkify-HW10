@@ -5,6 +5,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SearchComponent } from './components/search/search.component';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
 
 // Environment
 import { environment } from "../environments/environment";
@@ -30,6 +32,9 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +44,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     SignupComponent,
     ResetPasswordComponent,
     NavbarComponent,
-    SearchComponent
+    SearchComponent,
+    SearchResultComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +63,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     ReactiveFormsModule,
     MatToolbarModule,
     MatAutocompleteModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    AngularFirestoreModule,
+    NgxSpinnerModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

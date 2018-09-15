@@ -2,9 +2,10 @@
   <mat-toolbar-row class="custom-container">
     <span class="navbar-title" color="accent">Forkify</span>
     <nav class="nav">
-      <a class="link">Home</a>
-      <a class="link">Favorites</a>
+      <a class="link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/">Home</a>
+      <a class="link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" routerLink="/favorites">Favorites</a>
       <a class="link">About</a>
+      <button class="link" mat-button mat-stroked-button color="accent">Log out</button>
     </nav>
   </mat-toolbar-row>
 </mat-toolbar>

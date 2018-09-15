@@ -12,7 +12,9 @@ export const environment = {
     storageBucket: "forkify-app-angular.appspot.com",
     messagingSenderId: "653104702840"
   },
-  apiKeyFood2Fork: 'cb64d3daa1f96f63188e0232c1782d32 ',
+  // apiKeyFood2Fork: 'cb64d3daa1f96f63188e0232c1782d32',
+  // 338bf97b907b599d0bf21a6827bdae2f  reserv
+  apiKeyFood2Fork: '338bf97b907b599d0bf21a6827bdae2f',
   apiUrlFood2Fork: 'https://www.food2fork.com/api',
   proxy: 'https://cors.io/?'
 };

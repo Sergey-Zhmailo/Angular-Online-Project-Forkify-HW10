@@ -13,6 +13,9 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
+  public get isAuth() {
+    return this.afAuth.auth.currentUser
+  }
 
 
   login(email, password): Promise<any> {

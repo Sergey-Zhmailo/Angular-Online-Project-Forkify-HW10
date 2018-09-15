@@ -1,3 +1,6 @@
 .save-toggle {
   color: #b0bec5;
 }
+.save-toggle.mat-checked {
+  color: #00cf19;
+}
