@@ -11,6 +11,7 @@ interface FavoritesDB {
   publisher_url: string,
   recipe_id: string,
   social_rank: number,
+  source_url: string,
   title: string
 }
 
@@ -36,6 +37,7 @@ export class FavoritesService {
         publisher: value.publisher,
         publisher_url: value.publisher_url,
         social_rank: value.social_rank,
+        source_url: value.source_url,
         title: value.title
       });
   }

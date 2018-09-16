@@ -26,6 +26,9 @@ body {
 .search-block-left {
   position: initial;
 }
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #00cf19 !important;
+}
 /* ----- CUSTOM STYLES ----- */
 .align-right {
   text-align: right;

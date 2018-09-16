@@ -2,7 +2,7 @@
   <mat-card class="mb-3 search-block">
   <div class="row">
     <div class="col col-6">
-      <h4>Search recipes</h4>
+      <h4>{{ 'home.title' | translate }}</h4>
     </div>
     <div class="col col-6 search-block-left">
       <app-search (getData)="onGetRecipes($event)"></app-search>

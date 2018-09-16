@@ -10,6 +10,11 @@ import { ToastrService } from 'ngx-toastr';
 export class SearchResultComponent implements OnChanges {
   @Input('result') searchResult;
   favoritesList = [];
+  showRecipes = [];
+  recipesPerPage = 10;
+  currentPage = 1;
+  pages = 0;
+
 
   constructor(
     private favoritesService: FavoritesService,
@@ -24,6 +29,9 @@ export class SearchResultComponent implements OnChanges {
 
 
   ngOnChanges() {
+    this.pages = Math.ceil(this.searchResult.length / this.recipesPerPage);
+    this.showPage();
+
   }
 
   addToFavorites(item) {
@@ -34,6 +42,14 @@ export class SearchResultComponent implements OnChanges {
     } else {
       this.toastr.info('Recipe already in your favorites', 'Info');
     }
+  }
+
+  showPage(page: number = 1) {
+    this.currentPage = page;
+    const start = (page - 1) * this.recipesPerPage;
+    const end = page * this.recipesPerPage;
+    this.showRecipes = this.searchResult.slice(start, end);
+    console.log(this.showRecipes);
   }
 
 }

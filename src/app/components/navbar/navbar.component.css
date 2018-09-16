@@ -13,11 +13,19 @@
 .custom-navbar .nav .link {
   color: rgb(176, 190, 197);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.custom-navbar .nav .link .icon {
+  margin-right: 5px;
 }
 .custom-navbar .nav .link + .link {
   margin-left: 15px;
 }
+.custom-navbar .nav .link:hover .icon,
 .custom-navbar .nav .link:hover,
-.custom-navbar .nav .link.active {
+.custom-navbar .nav .link.active,
+.custom-navbar .nav .link.active .icon{
   color: #e5e5e5;
 }

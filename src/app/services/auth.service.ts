@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth} from "angularfire2/auth"
+import { AngularFireAuth } from "angularfire2/auth"
 import { HttpClient } from "@angular/common/http";
 import {Observable} from "rxjs/index";
 
@@ -7,14 +7,17 @@ import {Observable} from "rxjs/index";
   providedIn: 'root'
 })
 export class AuthService {
+  public isAuthEmail = '';
 
   constructor(
     private afAuth: AngularFireAuth,
     private http: HttpClient
   ) { }
 
-  public get isAuth() {
-    return this.afAuth.auth.currentUser
+  public isAuth() {
+    this.afAuth.authState.subscribe(res => {
+        return this.isAuthEmail = res.email;
+    });
   }
 
 
@@ -28,5 +31,9 @@ export class AuthService {
   }
   resetPassword(email): Promise<any> {
     return this.afAuth.auth.sendPasswordResetEmail(email);
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
   }
 }

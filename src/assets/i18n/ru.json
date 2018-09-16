@@ -1,0 +1,29 @@
+{
+  "navbar": {
+    "homeLink": "Главная",
+    "favoritesLink": "Избранное",
+    "aboutLink": "О приложении",
+    "settingsLink": "Настройки",
+    "logOut": "Выйти"
+  },
+  "settings": {
+    "settings": "Настройки",
+    "switchLang": "Изменить язык",
+    "savehistory": "Сохранять историю поиска",
+    "language": "Язык"
+  },
+  "login": {
+    "title": "Вход",
+    "noAccount": "Нет аккаунта?",
+    "forgotPassword": "Забыли пароль?"
+  },
+  "recipe": {
+    "details": "Подробнее",
+    "addToFavorites": "В избранное"
+  },
+  "home": {
+    "search": "Поиск",
+    "searching": "Поиск...",
+    "title": "Поиск рецептов"
+  }
+}

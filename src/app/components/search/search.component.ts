@@ -6,6 +6,7 @@ import { map, startWith } from "rxjs/operators";
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { FavoritesService } from "../../services/favorites.service";
+import { SaveHistoryService } from "../../services/save-history.service";
 
 @Component({
   selector: 'app-search',
@@ -24,7 +25,8 @@ export class SearchComponent implements OnInit {
     private searchService: SearchService,
     private toastr: ToastrService,
     private spinner: NgxSpinnerService,
-    private favoritesService: FavoritesService
+    private favoritesService: FavoritesService,
+    private saveHistoryService: SaveHistoryService
   ) { }
 
   ngOnInit() {
@@ -35,12 +37,14 @@ export class SearchComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
+    this.saveHistoryService.historyState.subscribe(state => {
+      this.saveSearch = state;
+    });
   }
 
   onSearch() {
     this.spinner.show();
     this.searchService.searchRecipe(this.searchControl.value).subscribe(res => {
-      console.log(res);
       if (res.length == 0) this.toastr.info(this.searchControl.value, 'No results of');
       let isDouble = this.searchHistory.some(data => data.name == this.searchControl.value.toLocaleLowerCase());
       if (this.saveSearch && !isDouble) {

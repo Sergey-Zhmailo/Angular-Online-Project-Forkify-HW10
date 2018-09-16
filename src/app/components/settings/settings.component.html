@@ -1,0 +1,34 @@
+<div class="container settings">
+  <div class="row">
+    <div class="col col-6 mx-auto">
+      <mat-card>
+        <mat-card-header class="settings-header">
+          <mat-card-title><mat-icon color="accent" class="icon">build</mat-icon><h4>{{ 'settings.settings' | translate }}</h4></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list role="list">
+            <mat-list-item role="listitem">
+              <div class="list-item-content d-flex w-100 justify-content-between align-items-center">
+                <span>{{ 'settings.savehistory' | translate }}</span>
+                <mat-slide-toggle color="accent" class="save-toggle" [(ngModel)]="historyState" (change)="toggleHistoryState()"></mat-slide-toggle>
+              </div>
+            </mat-list-item>
+            <mat-list-item role="listitem">
+              <div class="list-item-content d-flex w-100 justify-content-between align-items-center">
+                <span>{{ 'settings.language' | translate }}</span>
+                <span class="text-uppercase">{{ currentLang }}</span>
+                <div>
+                  <button mat-button [matMenuTriggerFor]="menu">{{ 'settings.switchLang' | translate }}</button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="switchLanguage('en')">English</button>
+                    <button mat-menu-item (click)="switchLanguage('ru')">Russian</button>
+                  </mat-menu>
+                </div>
+              </div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "navbar": {
+    "homeLink": "Home",
+    "favoritesLink": "Favorites",
+    "aboutLink": "About",
+    "settingsLink": "Settings",
+    "logOut": "Log out"
+  },
+  "settings": {
+    "settings": "Settings",
+    "switchLang": "Switch language",
+    "savehistory": "Save search history",
+    "language": "Language"
+  }
+  ,
+  "login": {
+    "title": "Sign in",
+    "noAccount": "Don't have account?",
+    "forgotPassword": "Forgot password?"
+  },
+  "recipe": {
+    "details": "Details",
+    "addToFavorites": "Add to favorites"
+  },
+  "home": {
+    "search": "Search",
+    "searching": "Searching...",
+    "title": "Search recipes"
+  }
+}

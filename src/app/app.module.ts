@@ -7,12 +7,16 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
+import { SettingsComponent } from './components/settings/settings.component';
+import { RecipeDetailsComponent } from './components/recipe-details/recipe-details.component';
+import { ShoppingListComponent } from './components/shopping-list/shopping-list.component';
 
 // Environment
 import { environment } from "../environments/environment";
 
 // Services
 import { AuthService } from "./services/auth.service";
+import { HttpClient } from "@angular/common/http";
 
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,6 +38,13 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+
+// Helpers
+import { HttpLoaderFactory } from "./helpers/transtaleFactory";
 
 
 @NgModule({
@@ -46,7 +57,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     NavbarComponent,
     SearchComponent,
     SearchResultComponent,
-    FavoritesComponent
+    FavoritesComponent,
+    SettingsComponent,
+    RecipeDetailsComponent,
+    ShoppingListComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +79,17 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     MatAutocompleteModule,
     MatSlideToggleModule,
     AngularFirestoreModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

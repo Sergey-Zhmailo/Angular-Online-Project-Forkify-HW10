@@ -1,0 +1,12 @@
+<div class="container">
+  <mat-card class="col col-8 mx-auto mb-1" *ngFor="let item of shoppingList">
+    <mat-card-title>{{ item.title }}</mat-card-title>
+    <mat-selection-list>
+      <mat-list-option *ngFor="let subitem of item.ingredients">
+          {{ subitem }}
+      </mat-list-option>
+    </mat-selection-list>
+    <mat-card-actions>
+    </mat-card-actions>
+  </mat-card>
+</div>

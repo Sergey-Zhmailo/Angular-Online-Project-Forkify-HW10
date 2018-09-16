@@ -14,7 +14,8 @@ export const environment = {
   },
   // apiKeyFood2Fork: 'cb64d3daa1f96f63188e0232c1782d32',
   // 338bf97b907b599d0bf21a6827bdae2f  reserv
-  apiKeyFood2Fork: '338bf97b907b599d0bf21a6827bdae2f',
+  // apiKeyFood2Fork: '338bf97b907b599d0bf21a6827bdae2f',
+  apiKeyFood2Fork: '64314e17d4122941b78fb925e3a144ae',
   apiUrlFood2Fork: 'https://www.food2fork.com/api',
   proxy: 'https://cors.io/?'
 };

@@ -1,0 +1,21 @@
+<div class="container">
+  <mat-card class="col col-8 mx-auto">
+    <mat-card-header class="d-flex align-items-center">
+      <div>
+        <mat-card-title>{{ recipe?.title }}</mat-card-title>
+        <mat-card-subtitle>{{ recipe?.publisher }}</mat-card-subtitle>
+      </div>
+      <button mat-button mat-stroked-button color="accent" class="ml-auto">Добавить в избранное</button>
+    </mat-card-header>
+    <img mat-card-image *ngIf="recipe" [src]="recipe?.image_url" [alt]="recipe?.title">
+    <mat-selection-list #recipe_ingredients [(ngModel)]="selectedIngredients" (ngModelChange)="selectIngredientChange($event)">
+      <button mat-button mat-stroked-button color="accent" class="float-right">All</button>
+      <mat-list-option *ngFor="let item of ingredientsList | async" [value]="item">
+        {{item}}
+      </mat-list-option>
+    </mat-selection-list>
+    <mat-card-actions class="clearfix">
+      <button mat-button mat-stroked-button color="accent" class="float-right" (click)="onAddToShoppingList(recipe?.recipe_id, recipe?.title)">Добавить отмеченные в список покупок</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
